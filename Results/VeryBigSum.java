@@ -4,15 +4,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.*;
 import static java.util.stream.Collectors.toList;
 
-class Result {
-
-    /*
-     * Complete the 'aVeryBigSum' function below.
-     *
-     * The function is expected to return a LONG_INTEGER.
-     * The function accepts LONG_INTEGER_ARRAY ar as parameter.
-     */
-
+public class VeryBigSum {
     public static long aVeryBigSum(List<Long> ar) {
         AtomicLong sum = new AtomicLong(0);
 
@@ -23,9 +15,7 @@ class Result {
         return sum.longValue();
     }
 
-}
 
-public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -36,7 +26,7 @@ public class Solution {
                 .map(Long::parseLong)
                 .collect(toList());
 
-        long result = Result.aVeryBigSum(ar);
+        long result = aVeryBigSum(ar);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();
